@@ -1,0 +1,156 @@
+/* Page wrapper */
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+/* Grid container */
+.cards-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* Individual card */
+.item-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.item-card:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Icon style */
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Title */
+.item-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+/* Text */
+.item-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+
+/* Page wrapper */
+.card-wrapper {
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Card container */
+.items-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #ffffff;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 12px;
+ /*    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); */
+    transition: 0.3s ease;
+	align-items: flex-start; /* ⬅ aligns content to the top */
+}
+
+/* Hover shadow 
+.items-card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    transform: translateY(-4px);
+}
+*/
+.card-image img:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    transform: translateY(-4px);
+}
+
+/* Image section */
+.card-image {
+    flex: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Text content */
+.card-content {
+    flex: 1;
+	/*
+	border-right-style:solid;
+	border-right-color:#093;
+	border-right-width:1px;
+	margin-right:5px;
+	padding-right:40px;
+	text-align:justify;
+	*/
+}
+
+.card-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #222;
+}
+
+.card-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+	jus
+}
+
+/* Reverse layout (image right) */
+.items-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .items-card,
+    .items-card.reverse {
+        flex-direction: column;
+    }
+
+    .card-content h2 {
+        font-size: 1.25rem;
+    }
+	
+	.card-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card-content {
+    flex: 1;
+	padding-top:20px;
+	text-align:justify;
+}
+}
+
+

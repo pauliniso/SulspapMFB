@@ -1,0 +1,56 @@
+/* Popup base styles */
+#popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  bottom: 20px; /* anchored near the bottom */
+  right: 20px;
+  max-width: 350px;
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+#popup h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #0066cc;
+}
+
+/* Text */
+#popup p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Close button */
+#popup .close-btn {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+#popup .close-btn:hover {
+  background: #004a99;
+}
+
+/* Fade out effect */
+.fadeOut {
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; transform: translateY(20px); }
+}
+

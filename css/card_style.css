@@ -1,0 +1,146 @@
+/* Container to center the card */
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Card styling */
+.item-card {
+    width: 100%;
+    
+    background: #ffffff;
+    padding: 25px 30px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.item-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+/* Text styling */
+.item-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+    color: #222;
+}
+
+.item-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .item-card {
+        padding: 16px;
+		text-align:justify;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-card {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .item-card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Wrapper center & width */
+.faq-wrapper {
+    max-width: 900px;
+    margin: 30px 5px;
+    padding: 0 15px;
+}
+
+/* Each accordion item */
+.faq-item {
+    background: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+/* Hover shadow */
+.faq-item:hover {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* Question header */
+.faq-item summary {
+    padding: 18px 22px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+
+/* Remove default arrow */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom arrow */
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate when open */
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+/* Answer content */
+.faq-content {
+    padding: 0 22px 18px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Smooth open animation */
+.faq-item[open] .faq-content {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+    .faq-item summary {
+        font-size: 1rem;
+        padding: 15px 18px;
+    }
+
+    .faq-content {
+        padding: 0 18px 15px;
+    }
+}
+
+

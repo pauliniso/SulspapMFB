@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Sulspap MFB - The trader's bank</title>
+        <!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+        
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/card_style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <div class="container-fluid topbar bg-secondary d-none d-xl-block w-100">
+            <div class="container">
+                <div class="row gx-0 align-items-center" style="height: 45px;">
+                    <div class="col-lg-6 text-center text-lg-start mb-lg-0">
+                        <div class="d-flex flex-wrap">
+                            <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                            <a href="tel:+01234567890" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
+                            <a href="mailto:example@gmail.com" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a href="index.html" class="navbar-brand p-0">
+                        <h1 class="display-6 text-primary"><img src="img/logo.png" alt="Logo"></h1>
+                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav mx-auto py-0">
+                            <a href="index.html" class="nav-item nav-link ">Home</a>
+                           
+                                <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="about.html" class="dropdown-item">Who We Are</a>
+                                    <a href="bod.html" class="dropdown-item">Board Of Directors</a>
+                                    <a href="faqs.html" class="dropdown-item">FAQS</a>
+                                </div>
+                            </div>								
+                                <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">E-Channels</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="online.html" class="dropdown-item">Internet Banking</a>
+                                    <a href="mobile_banking.html" class="dropdown-item">Mobile Banking</a>
+                                    <a href="vutepay.html" class="dropdown-item">VutePay Account</a>
+                                    <a href="pos_service.html" class="dropdown-item">POS Solutions</a>
+                                </div>
+                            </div>
+                                
+                             
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Products</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="saving.html" class="dropdown-item">Saving Products</a>
+                                    <a href="sme_loan.html" class="dropdown-item">SME Loan</a>
+                                    <a href="personal_loan.html" class="dropdown-item">Individual Loan</a>
+                                    <a href="group_loan.html" class="dropdown-item">Group Loan</a>
+                                    <a href="esusu_loan.html" class="dropdown-item">ESUSU Loan</a>
+                                    <a href="asset_loan.html" class="dropdown-item">Assets Loan</a>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <a href="#" class="btn btn-primary rounded-pill py-2 px-4">ONLINE BANKING</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+        
+          
+    
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Trader's Quick Loan</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active text-primary">Esusu Loan</li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+<!-- Saving product Start -->
+<div class="container about-text py-5" >            
+  <div class="card-container">
+    <div class="item-card">
+        <h2 class="display-5 text-capitalize wow fadeInUp" data-wow-delay="0.2s"> Our Esusu <span class="text-primary">Loan</span></h2><hr style="width:170px; height:1px; background-color:#F30" class="wow fadeInUp" data-wow-delay="0.2s">
+        <p class="wow fadeInUp" data-wow-delay="0.2s">
+      Our ESUSU Loan is designed to support low-income earners, traders, artisans, micro-entrepreneurs, and small retailers who may not qualify for conventional loans. The product is built around the traditional Ajo savings system, making it suitable for individuals with daily cash flow. Customers access a loan based on their savings history and repay in small, manageable daily instalments.</p>
+
+<p class="wow fadeInUp" data-wow-delay="0.2s">This Traders’ Quick Loan is a short-term working capital facility tailored specifically for traders and market vendors who require fast access to funds to keep their businesses running smoothly. It addresses urgent business needs such as restocking goods, meeting daily operational expenses, and taking advantage of bulk purchase opportunities, with flexible repayment aligned to daily trading activities.
+      </p>
+      <h4  class="wow fadeInUp" data-wow-delay="0.2s" style="font-size:18px;"><strong>Who can Apply?</strong></h4>
+      <ul class="wow fadeInUp" data-wow-delay="0.2s">
+        <li>Market traders and shop owners</li>
+        <li>Retailers and distributors</li>
+        <li>Petty traders and small vendors</li>
+        <li>Businesses with daily or frequent sales</li>
+      </ul>
+      
+      <h4  class="wow fadeInUp" data-wow-delay="0.2s" style="font-size:18px;"><strong>How Group Loans Work</strong></h4>
+      <ol class="wow fadeInUp" data-wow-delay="0.2s">
+        <li><strong>Quick Application:</strong> The trader submits a simple loan request with basic personal and business details.</li>
+        <li><strong>Rapid Assessment: </strong> The bank conducts a fast assessment of the trader&rsquo;s cash flow, sales pattern, and repayment ability.</li>
+        <li><strong>Fast Approval &amp; Disbursement</strong> Once approved, funds are disbursed quickly—often within a short time frame—to meet urgent needs.</li>
+        <li><strong>Short-Term Repayment</strong> Repayment is structured in small instalments (daily), aligned with the trader&rsquo;s sales cycle.</li>
+        <li>
+          <p data-start="956" data-end="996">Applicants are usually required to show:</p>
+          <ul class="wow fadeInUp" data-wow-delay="0.2s">
+            <li>Evidence of an existing business</li>
+            <li>Consistent cash flow or trading history</li>
+            <li>Savings relationship with the bank (in many cases)</li>
+          </ul>
+        </li>
+      </ol>
+      <div class="faq-wrapper wow fadeInUp" data-wow-delay="0.2s">
+        <details class="faq-item">
+        <summary><span style="color:#F33;" >Application Requirements</span></summary>
+        <div class="faq-content">
+            <ul>
+              <li>Customer opens a Savings account with Sulspap MFB</li>
+              <li>Duly completed application form</li>
+              <li>A valid means of ID (national ID, driver's license, voter's card or international passport)</li>
+              <li>2 guarantors</li>
+              <li>Current utility bill</li>
+              <li>4 recent passport-size photographs</li>
+            </ul>
+        </div>
+    </details>
+	</div>
+        <div class="banner-btn">
+                            <a href="#" class="btn btn-secondary rounded-pill py-3 px-4 px-md-5 me-2">Open Account</a>
+                            <a href="#" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2">Contact Us</a>
+                        </div>
+    </div>
+  </div>
+
+</div>
+    <!-- Saving product End -->
+    
+        
+        <!-- Fact Counter -->
+        <div class="container-fluid counter py-5">
+        <div class="container py-5">
+       	 <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                    <h1 class="display-5 text-capitalize text-white mb-3">Bank <span class="text-primary"> Anytime, Anywhere!</span></h1>
+                    <p class="mb-0 text-white">Download Sulspap MfB mobile app for seamless banking, savings, and loans.
+                    </p>
+                </div>
+        
+                      
+         <div class="banner-btn download-button wow fadeInUp" data-wow-delay="0.1s">
+			<img src="img/google_store.png" alt="">
+            <img src="img/app_store.png" alt="">
+        </div>
+                  
+          </div>
+       </div>
+        <!-- Fact Counter -->
+       
+
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                    <h1 class="display-5 text-capitalize mb-3">Other <span class="text-primary"> Products</span></h1>
+                    <p class="mb-0">Just starting a business?, Unlock your financial potential and create opportunities. No matter your starting point, the right financial support is the way to grow, thrive, and reach your goals with confidence.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-1.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="blog-content rounded-bottom p-4">
+                                <div class="blog-date">POS Services</div>
+                                <div class="blog-comment my-3">
+                                    <div class="small"><span class="fa fa-user text-primary"></span><span class="ms-2">Martin.C</span></div>
+                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span><span class="ms-2">6 Comments</span></div>
+                                </div>
+                                <a href="#" class="h4 d-block mb-3">Rental Cars how to check driving fines?</a>
+                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                                <a href="#" class="">Read More  <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-2.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="blog-content rounded-bottom p-4">
+                                <div class="blog-date">Petty Business Loan</div>
+                                <div class="blog-comment my-3">
+                                    <div class="small"><span class="fa fa-user text-primary"></span><span class="ms-2">Martin.C</span></div>
+                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span><span class="ms-2">6 Comments</span></div>
+                                </div>
+                                <a href="#" class="h4 d-block mb-3">Rental cost of sport and other cars</a>
+                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                                <a href="#" class="">Read More  <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-3.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="blog-content rounded-bottom p-4">
+                                <div class="blog-date">Digital Banking</div>
+                                <div class="blog-comment my-3">
+                                    <div class="small"><span class="fa fa-user text-primary"></span><span class="ms-2">Martin.C</span></div>
+                                    <div class="small"><span class="fa fa-comment-alt text-primary"></span><span class="ms-2">6 Comments</span></div>
+                                </div>
+                                <a href="#" class="h4 d-block mb-3">Document required for car rental</a>
+                                <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                                <a href="#" class="">Read More  <i class="fa fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+    
+    
+        
+        <!-- footer Start -->
+        <div class="container-fluid gradient-fill-ft footer py-5 wow fadeIn" data-wow-delay="0.2s" >
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <div class="footer-item">
+                                <h4 class="text-white mb-4">About Us</h4>
+                                <p class="f0-1">Sulspap Microfinance Bank has been committed to empowering individuals, entrepreneurs, and businesses by providing accessible financing.</p>
+                            </div>
+                            <div class="position-relative">
+                                <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                                <button type="button" class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                             <div class="f0-1">
+                            <a href="about.html" class="f0-1"><i class="fas fa-angle-right"></i> About</a>
+                            <br><a href="online.html" class="f0-1"><i class="fas fa-angle-right"></i> Online Banking</a>
+                            <br><a href="vutepay.html" class="f0-1"><i class="fas fa-angle-right"></i> VutePay</a>
+                            <br><a href="privacy.html" class="f0-1"><i class="fas fa-angle-right"></i> Privacy Policy</a>
+                            <br><a href="contact.html" class="f0-1"><i class="fas fa-angle-right"></i> Contact us</a>
+                            <br><a href="terms.html" class="f0-1"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
+                          </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4 text-wh">Business Hours</h4>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0 text-white-50">Mon - Friday:</h6>
+                                <p class="text-white mb-0">08.00am to 05.00 pm</p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0 text-white-50">Saturday:</h6>
+                                <p class="text-white mb-0">24/7 Customer service </p>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-muted mb-0 text-white-50">Vacation:</h6>
+                                <p class="text-white mb-0">All Sunday is our vacation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Contact Info</h4>
+                            <div class="f0-1">
+                            <a href="#" class="f0-1"><i class="fa fa-map-marker-alt "></i> 123 Street, New York, USA</a> 
+                            <a href="mailto:info@example.com" class="f0-1"><i class="fas fa-envelope "></i> info@example.com</a>
+                            <a href="tel:+012 345 67890" class="f0-1"><i class="fas fa-phone "></i> +012 345 67890</a>
+                            <a href="tel:+012 345 67890" class="f0-1"><i class="fas fa-print "></i> +012 345 67890</a>
+                            <hr>
+                            <div class="d-flex">
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-facebook-f text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-twitter text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-instagram text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-0" href=""><i class="fab fa-linkedin-in text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><div class="text-white"><i class="fas fa-copyright text-light me-2"></i> Sulspap MFB.  All right reserved.</div></span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        <a href="https://birthstarsgc.com/"  class="text-white-50">Designed By Birthstars</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+
+</html>
