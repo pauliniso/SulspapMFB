@@ -1036,3 +1036,57 @@
   font-size: 20px;
 }
 /*Download button end */
+
+/* Container for buttons - add this class to the parent div */
+.button-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Tablet and smaller */
+@media (max-width: 768px) {
+  .btn1 {
+    padding: 12px 16px;
+    font-size: 15px;
+    gap: 6px;
+	text-align:center;
+  }
+  
+  .btn1 i {
+    font-size: 18px;
+  }
+
+/* Stack buttons vertically on smaller screens */
+   .button-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .android-btn,
+  .ios-btn {
+    width: 100%;
+	justify-content: center;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .btn1 {
+    padding: 10px 14px;
+    font-size: 14px;
+    gap: 5px;
+    width: 100%; /* Makes button full-width on mobile if needed */
+    justify-content: center;
+  }
+  
+  .btn1 i {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
