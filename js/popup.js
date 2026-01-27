@@ -54,8 +54,3 @@ function closePopup() {
   popupDisplayed = true; // ✅ Make sure it won't trigger again
 }
 
-
-  document.getElementById('comingSoon').addEventListener('click', function (e) {
-    e.preventDefault();
-    alert('Coming Soon');
-  });
