@@ -22,7 +22,6 @@
       return "";
     }
 
-
 // Track if popup has already been shown
 let popupDisplayed = false;
 
@@ -54,3 +53,9 @@ function closePopup() {
   popup.style.display = "none";
   popupDisplayed = true; // ✅ Make sure it won't trigger again
 }
+
+
+  document.getElementById('comingSoon').addEventListener('click', function (e) {
+    e.preventDefault();
+    alert('Coming Soon');
+  });
