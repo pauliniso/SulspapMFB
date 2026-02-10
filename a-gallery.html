@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+/* ===== Staff Gallery Section ===== */
+.staff-gallery {
+    padding: 40px 20px;
+    background: #f8f9fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* ===== Grid Layout ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ===== Gallery Item ===== */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* ===== Hover Effects ===== */
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 22px;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+/* ===== Lightbox Styles ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 80vh;
+    border-radius: 10px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #ddd;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+<section class="staff-gallery">
+    <h2 class="gallery-title">Staff Events Gallery</h2>
+
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            g
+        </div>
+        <div class="gallery-item">
+            <img src="img/carousel-1.jpg" alt="Staff Event 2">
+        </div>
+        <div class="gallery-item">
+            <img src="img/banner-3.jpg" alt="Staff Event 3">
+        </div>
+        <div class="gallery-item">
+            <img src="img/banner-01.jpg" alt="Staff Event 4">
+        </div>
+        <div class="gallery-item">
+            <img src="img/about-img.jpg" alt="Staff Event 5">
+        </div>
+        <div class="gallery-item">
+            <img src="img/about-img-1.jpg" alt="Staff Event 6">
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+        img.addEventListener('click', function () {
+            lightbox.style.display = 'block';
+            lightboxImg.src = this.src;
+        });
+    });
+
+    closeBtn.onclick = function () {
+        lightbox.style.display = 'none';
+    };
+
+    lightbox.onclick = function (e) {
+        if (e.target !== lightboxImg) {
+            lightbox.style.display = 'none';
+        }
+    };
+</script>
+
+</body>
+</html>

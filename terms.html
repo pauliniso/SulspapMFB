@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions | Bank Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1a3a52;
+            --color-secondary: #2c5f7d;
+            --color-accent: #d4af37;
+            --color-text: #1e1e1e;
+            --color-text-light: #4a4a4a;
+            --color-bg: #fafafa;
+            --color-bg-alt: #ffffff;
+            --color-border: #e0e0e0;
+            --font-serif: 'Crimson Pro', serif;
+            --font-sans: 'DM Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 4rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-meta span::before {
+            content: '•';
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+
+        /* Table of Contents */
+        .toc-wrapper {
+            background: var(--color-bg-alt);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        .toc-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: none;
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            cursor: pointer;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .toc-toggle:hover {
+            color: var(--color-secondary);
+        }
+
+        .toc-toggle::after {
+            content: '▼';
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .toc-toggle.active::after {
+            transform: rotate(180deg);
+        }
+
+        .toc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .toc-content.active {
+            max-height: 600px;
+            margin-top: 1rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .toc-link {
+            color: var(--color-text-light);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .toc-link:hover {
+            color: var(--color-primary);
+            border-left-color: var(--color-accent);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .print-btn:hover {
+            background: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--color-bg-alt);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            scroll-margin-top: 100px;
+        }
+
+        .section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            color: var(--color-primary);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-accent);
+            font-weight: 600;
+        }
+
+        .section h3 {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            color: var(--color-secondary);
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+        }
+
+        .section ul, .section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .section strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        /* Important Notice Box */
+        .notice-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+            border-left: 4px solid var(--color-accent);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .notice-box p {
+            color: #856404;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-top: 0;
+            font-family: var(--font-serif);
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-box a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem 4rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .print-btn {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.75rem 1.25rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .toc-wrapper,
+            .print-btn {
+                display: none;
+            }
+
+            .section {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+
+            body {
+                background: white;
+            }
+
+            .header {
+                background: var(--color-primary);
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease backwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.15s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Terms and Conditions</h1>
+            <div class="header-meta">
+                <span>Last Updated: January 30, 2026</span>
+                <span>Effective Immediately</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <div class="toc-wrapper">
+        <div class="toc">
+            <button class="toc-toggle" onclick="toggleTOC()">Table of Contents</button>
+            <div class="toc-content" id="tocContent">
+                <div class="toc-grid">
+                    <a href="#section-1" class="toc-link">1. Introduction and Acceptance</a>
+                    <a href="#section-2" class="toc-link">2. Definitions</a>
+                    <a href="#section-3" class="toc-link">3. Eligibility</a>
+                    <a href="#section-4" class="toc-link">4. Account Registration and Security</a>
+                    <a href="#section-5" class="toc-link">5. Use of Services</a>
+                    <a href="#section-6" class="toc-link">6. Online and Mobile Banking</a>
+                    <a href="#section-7" class="toc-link">7. Fees and Charges</a>
+                    <a href="#section-8" class="toc-link">8. Privacy and Data Protection</a>
+                    <a href="#section-9" class="toc-link">9. Electronic Communications</a>
+                    <a href="#section-10" class="toc-link">10. Bill Payment Services</a>
+                    <a href="#section-11" class="toc-link">11. Mobile Deposit</a>
+                    <a href="#section-12" class="toc-link">12. Fund Transfers</a>
+                    <a href="#section-13" class="toc-link">13. Intellectual Property</a>
+                    <a href="#section-14" class="toc-link">14. Third-Party Services</a>
+                    <a href="#section-15" class="toc-link">15. Disclaimers and Warranties</a>
+                    <a href="#section-16" class="toc-link">16. Limitation of Liability</a>
+                    <a href="#section-17" class="toc-link">17. Indemnification</a>
+                    <a href="#section-18" class="toc-link">18. Dispute Resolution</a>
+                    <a href="#section-19" class="toc-link">19. Account Closure</a>
+                    <a href="#section-20" class="toc-link">20. Changes to Terms</a>
+                    <a href="#section-21" class="toc-link">21. Notices and Communications</a>
+                    <a href="#section-22" class="toc-link">22. Force Majeure</a>
+                    <a href="#section-23" class="toc-link">23. Regulatory Compliance</a>
+                    <a href="#section-24" class="toc-link">24. Miscellaneous Provisions</a>
+                    <a href="#section-25" class="toc-link">25. Accessibility</a>
+                    <a href="#section-26" class="toc-link">26. Contact Information</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="print-btn" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 5V1h8v4M4 11H2V7h12v4h-2M4 9h8v6H4V9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Print
+    </button>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Section 1 -->
+        <section id="section-1" class="section">
+            <h2>1. Introduction and Acceptance</h2>
+            <p>These Terms and Conditions ("Terms") govern your use of <strong>[Bank Name]'s</strong> website, mobile applications, online banking services, and related digital platforms (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms and all applicable laws and regulations.</p>
+            <div class="notice-box">
+                <p><strong>Important:</strong> If you do not agree with any part of these Terms, you must not use our Services.</p>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="section-2" class="section">
+            <h2>2. Definitions</h2>
+            <ul>
+                <li><strong>"Bank," "we," "us," or "our"</strong> refers to [Bank Name] and its affiliates</li>
+                <li><strong>"You," "your," or "Customer"</strong> refers to the user of our Services</li>
+                <li><strong>"Account"</strong> means any deposit, loan, credit, or other banking product or service</li>
+                <li><strong>"Online Banking"</strong> refers to our internet and mobile banking platforms</li>
+            </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="section-3" class="section">
+            <h2>3. Eligibility</h2>
+            <p>To use our Services, you must:</p>
+            <ul>
+                <li>Be at least 18 years of age (or the age of majority in your jurisdiction)</li>
+                <li>Have the legal capacity to enter into binding contracts</li>
+                <li>Provide accurate and complete information during registration</li>
+                <li>Not be prohibited from using banking services under applicable law</li>
+            </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="section-4" class="section">
+            <h2>4. Account Registration and Security</h2>
+            
+            <h3>4.1 Registration</h3>
+            <p>You agree to provide true, accurate, current, and complete information during the registration process and to update such information to keep it accurate and current.</p>
+            
+            <h3>4.2 Username and Password</h3>
+            <p>You are responsible for maintaining the confidentiality of your login credentials, including usernames, passwords, PINs, and security questions. You agree to:</p>
+            <ul>
+                <li>Create strong, unique passwords</li>
+                <li>Not share your credentials with any third party</li>
+                <li>Notify us immediately of any unauthorized access or security breach</li>
+                <li>Accept responsibility for all activities that occur under your account</li>
+            </ul>
+            
+            <h3>4.3 Multi-Factor Authentication</h3>
+            <p>We may require multi-factor authentication for enhanced security. You agree to maintain valid contact information for authentication purposes.</p>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="section-5" class="section">
+            <h2>5. Use of Services</h2>
+            
+            <h3>5.1 Permitted Use</h3>
+            <p>You may use our Services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+            <ul>
+                <li>Violate any applicable laws or regulations</li>
+                <li>Infringe upon the rights of others</li>
+                <li>Transmit harmful code, viruses, or malicious software</li>
+                <li>Attempt to gain unauthorized access to our systems</li>
+                <li>Use automated systems or bots to access the Services</li>
+                <li>Engage in fraudulent activities or money laundering</li>
+            </ul>
+            
+            <h3>5.2 Service Availability</h3>
+            <p>While we strive to provide continuous service, we do not guarantee uninterrupted access. Services may be temporarily unavailable due to maintenance, upgrades, or circumstances beyond our control.</p>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="section-6" class="section">
+            <h2>6. Online and Mobile Banking</h2>
+            
+            <h3>6.1 Service Description</h3>
+            <p>Our online and mobile banking services allow you to:</p>
+            <ul>
+                <li>View account balances and transaction history</li>
+                <li>Transfer funds between accounts</li>
+                <li>Pay bills and manage payees</li>
+                <li>Deposit checks (mobile deposit)</li>
+                <li>Communicate with the bank</li>
+                <li>Update account preferences</li>
+            </ul>
+            
+            <h3>6.2 Transaction Authorization</h3>
+            <p>By initiating transactions through our Services, you authorize us to execute such transactions. Once submitted, transactions cannot typically be cancelled or modified.</p>
+            
+            <h3>6.3 Transaction Limits</h3>
+            <p>We may impose daily, weekly, or monthly limits on transactions for security purposes. These limits may be adjusted at our discretion.</p>
+            
+            <h3>6.4 Cut-Off Times</h3>
+            <p>Transactions received after our daily cut-off time will be processed on the next business day.</p>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="section-7" class="section">
+            <h2>7. Fees and Charges</h2>
+            
+
+            <h3>7.1 Service Fees</h3>
+            <p>Certain services may be subject to fees as disclosed in our Fee Schedule, available on our website and upon request. We reserve the right to modify fees with reasonable notice.</p>
+            
+            <h3>7.2 Third-Party Fees</h3>
+            <p>You are responsible for any fees charged by third parties, including internet service providers, mobile carriers, and other financial institutions.</p>
+            
+            <h3>7.3 Overdraft and NSF Fees</h3>
+            <p>Overdraft and non-sufficient funds fees may apply as set forth in your account agreement.</p>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="section-8" class="section">
+            <h2>8. Privacy and Data Protection</h2>
+            
+            <h3>8.1 Privacy Policy</h3>
+            <p>Our collection, use, and protection of your personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.</p>
+            
+            <h3>8.2 Data Security</h3>
+            <p>We employ industry-standard security measures to protect your information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+            
+            <h3>8.3 Your Responsibilities</h3>
+            <p>You agree to use secure networks when accessing our Services and to keep your devices protected with up-to-date security software.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section id="section-9" class="section">
+            <h2>9. Electronic Communications and Disclosures</h2>
+            
+            <h3>9.1 Consent to Electronic Communications</h3>
+            <p>By using our Services, you consent to receive communications from us electronically, including emails, text messages, push notifications, and in-app messages.</p>
+            
+            <h3>9.2 Electronic Statements and Documents</h3>
+            <p>You agree to receive account statements, disclosures, and other documents electronically unless you opt for paper delivery where available.</p>
+            
+            <h3>9.3 Withdrawal of Consent</h3>
+            <p>You may withdraw your consent to electronic communications by contacting us, though this may limit your ability to use certain Services.</p>
+        </section>
+
+        <!-- Section 10 -->
+        <section id="section-10" class="section">
+            <h2>10. Bill Payment Services</h2>
+            
+            <h3>10.1 Service Description</h3>
+            <p>Our bill payment service allows you to make payments to payees you designate. You authorize us to debit your account for payment amounts.</p>
+            
+            <h3>10.2 Your Responsibilities</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Ensuring sufficient funds are available</li>
+                <li>Providing accurate payee information</li>
+                <li>Scheduling payments with adequate processing time</li>
+                <li>Verifying that payments have been received by payees</li>
+            </ul>
+            
+            <h3>10.3 Payment Timing</h3>
+            <p>Payment processing times vary by payee. We are not responsible for delays caused by payees or third-party processors.</p>
+        </section>
+
+        <!-- Section 11 -->
+        <section id="section-11" class="section">
+            <h2>11. Mobile Deposit</h2>
+            
+            <h3>11.1 Eligible Items</h3>
+            <p>Mobile deposit is available for certain checks drawn on U.S. banks. We reserve the right to reject any item at our discretion.</p>
+            
+            <h3>11.2 Deposit Requirements</h3>
+            <p>You agree to:</p>
+            <ul>
+                <li>Endorse checks with "For Mobile Deposit Only" and your signature</li>
+                <li>Capture clear, legible images of checks</li>
+                <li>Retain original checks for a specified period</li>
+                <li>Securely destroy checks after the retention period</li>
+                <li>Not deposit the same check more than once</li>
+            </ul>
+            
+            <h3>11.3 Deposit Limits</h3>
+            <p>Daily and monthly deposit limits apply and may vary based on your account history.</p>
+        </section>
+
+        <!-- Section 12 -->
+        <section id="section-12" class="section">
+            <h2>12. Fund Transfers</h2>
+            
+            <h3>12.1 Internal Transfers</h3>
+            <p>You may transfer funds between your accounts instantly, subject to available balance and any holds.</p>
+            
+            <h3>12.2 External Transfers</h3>
+            <p>External transfers to accounts at other institutions may take 1-3 business days. Verification of external accounts is required before the first transfer.</p>
+            
+            <h3>12.3 Wire Transfers</h3>
+            <p>Wire transfer services are subject to additional terms, fees, and security procedures.</p>
+        </section>
+
+        <!-- Section 13 -->
+        <section id="section-13" class="section">
+            <h2>13. Intellectual Property</h2>
+            
+            <h3>13.1 Ownership</h3>
+            <p>All content, trademarks, logos, service marks, and technology used in our Services are owned by or licensed to us. You may not use, copy, or distribute any content without our express written permission.</p>
+            
+            <h3>13.2 Limited License</h3>
+            <p>We grant you a limited, non-exclusive, non-transferable license to access and use our Services for personal, non-commercial purposes.</p>
+        </section>
+
+        <!-- Section 14 -->
+        <section id="section-14" class="section">
+            <h2>14. Third-Party Services and Links</h2>
+            <p>Our Services may contain links to third-party websites or integrate with third-party services. We are not responsible for the content, privacy practices, or terms of third-party sites. Your use of third-party services is at your own risk.</p>
+        </section>
+
+        <!-- Section 15 -->
+        <section id="section-15" class="section">
+            <h2>15. Disclaimers and Warranties</h2>
+            
+            <h3>15.1 Service Provided "As Is"</h3>
+            <p>Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+            
+            <h3>15.2 No Guarantee of Accuracy</h3>
+            <p>While we strive for accuracy, we do not guarantee that information provided through our Services is error-free, complete, or current.</p>
+            
+            <h3>15.3 Investment Disclaimer</h3>
+            <p>Any information provided through our Services does not constitute financial, investment, or tax advice. You should consult with appropriate professionals before making financial decisions.</p>
+        </section>
+
+        <!-- Section 16 -->
+        <section id="section-16" class="section">
+            <h2>16. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, we shall not be liable for:</p>
+            <ul>
+                <li>Indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Loss of profits, revenue, data, or use</li>
+                <li>Damages exceeding the fees paid by you for the Services in the 12 months preceding the claim</li>
+            </ul>
+            <p>This limitation applies regardless of the legal theory and even if we have been advised of the possibility of such damages.</p>
+        </section>
+
+        <!-- Section 17 -->
+        <section id="section-17" class="section">
+            <h2>17. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless the Bank, its officers, directors, employees, and agents from any claims, liabilities, damages, losses, and expenses arising from:</p>
+            <ul>
+                <li>Your violation of these Terms</li>
+                <li>Your use of the Services</li>
+                <li>Your violation of any rights of another party</li>
+                <li>Any fraudulent or illegal activity</li>
+            </ul>
+        </section>
+
+        <!-- Section 18 -->
+        <section id="section-18" class="section">
+            <h2>18. Dispute Resolution</h2>
+            
+            <h3>18.1 Governing Law</h3>
+            <p>These Terms are governed by the laws of [State/Jurisdiction], without regard to conflict of law provisions.</p>
+            
+            <h3>18.2 Arbitration Agreement</h3>
+            <p>Any dispute arising from these Terms or your use of our Services shall be resolved through binding arbitration rather than in court, except where prohibited by law.</p>
+            
+            <h3>18.3 Class Action Waiver</h3>
+            <p>You agree to resolve disputes individually and waive any right to participate in class action lawsuits or class-wide arbitration.</p>
+            
+            <h3>18.4 Exceptions</h3>
+            <p>Either party may seek injunctive relief in court for intellectual property disputes or violations of these Terms.</p>
+        </section>
+
+        <!-- Section 19 -->
+        <section id="section-19" class="section">
+            <h2>19. Account Closure and Termination</h2>
+            
+            <h3>19.1 Your Right to Close</h3>
+            <p>You may close your account at any time by following our account closure procedures.</p>
+            
+            <h3>19.2 Our Right to Terminate</h3>
+            <p>We reserve the right to suspend or terminate your access to Services at any time for:</p>
+            <ul>
+                <li>Violation of these Terms</li>
+                <li>Fraudulent or illegal activity</li>
+                <li>Inactivity</li>
+                <li>Risk management purposes</li>
+                <li>Any other reason at our discretion</li>
+            </ul>
+            
+            <h3>19.3 Effect of Termination</h3>
+            <p>Upon termination, you must immediately cease using the Services. Any outstanding obligations will survive termination.</p>
+        </section>
+
+        <!-- Section 20 -->
+        <section id="section-20" class="section">
+            <h2>20. Changes to Terms</h2>
+            <p>We may modify these Terms at any time. Material changes will be communicated through:</p>
+            <ul>
+                <li>Email notification</li>
+                <li>Website posting</li>
+                <li>In-app notification</li>
+                <li>Account statements</li>
+            </ul>
+            <p>Continued use of our Services after changes constitutes acceptance of the modified Terms.</p>
+        </section>
+
+        <!-- Section 21 -->
+        <section id="section-21" class="section">
+            <h2>21. Notices and Communications</h2>
+            
+            <h3>21.1 To You</h3>
+            <p>We may send notices to the email address or physical address on file. You agree to keep your contact information current.</p>
+            
+            <h3>21.2 To Us</h3>
+            <div class="contact-box">
+                <h3>Contact the Bank</h3>
+                <p>
+                    <strong>[Bank Name]</strong><br>
+                    [Address Line 1]<br>
+                    [Address Line 2]<br>
+                    [City, State ZIP Code]<br><br>
+                    Email: <a href="mailto:legal@bankname.com">legal@bankname.com</a><br>
+                    Phone: <a href="tel:1-XXX-XXX-XXXX">1-XXX-XXX-XXXX</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 22 -->
+        <section id="section-22" class="section">
+            <h2>22. Force Majeure</h2>
+            <p>We shall not be liable for any failure or delay in performing our obligations due to circumstances beyond our reasonable control, including natural disasters, acts of war, terrorism, labor disputes, government actions, or failures of third-party systems.</p>
+        </section>
+
+        <!-- Section 23 -->
+        <section id="section-23" class="section">
+            <h2>23. Regulatory Compliance</h2>
+            
+            <h3>23.1 Anti-Money Laundering</h3>
+            <p>We comply with all applicable anti-money laundering and know-your-customer regulations. You agree to provide requested information for compliance purposes.</p>
+            
+            <h3>23.2 Reporting Requirements</h3>
+            <p>We may be required to report certain transactions or activities to government authorities as required by law.</p>
+            
+            <h3>23.3 Sanctions Compliance</h3>
+            <p>You represent that you are not subject to sanctions administered by the Office of Foreign Assets Control (OFAC) or other applicable sanctions programs.</p>
+        </section>
+
+        <!-- Section 24 -->
+        <section id="section-24" class="section">
+            <h2>24. Miscellaneous Provisions</h2>
+            
+            <h3>24.1 Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy and any applicable product agreements, constitute the entire agreement between you and the Bank.</p>
+            
+            <h3>24.2 Severability</h3>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.</p>
+            
+            <h3>24.3 Waiver</h3>
+            <p>Our failure to enforce any provision does not constitute a waiver of that provision or any other provision.</p>
+            
+            <h3>24.4 Assignment</h3>
+            <p>You may not assign or transfer your rights under these Terms. We may assign our rights to any affiliate or successor.</p>
+            
+            <h3>24.5 Survival</h3>
+            <p>Provisions that by their nature should survive termination shall survive, including warranty disclaimers, limitations of liability, and dispute resolution provisions.</p>
+        </section>
+
+        <!-- Section 25 -->
+        <section id="section-25" class="section">
+            <h2>25. Accessibility</h2>
+            <p>We are committed to ensuring our Services are accessible to individuals with disabilities. If you experience accessibility issues, please contact us at <a href="mailto:accessibility@bankname.com">accessibility@bankname.com</a>.</p>
+        </section>
+
+        <!-- Section 26 -->
+        <section id="section-26" class="section">
+            <h2>26. Contact Information</h2>
+            <p>For questions about these Terms or our Services:</p>
+            
+            <div class="contact-box">
+                <h3>Customer Service</h3>
+                <p>
+                    Phone: <a href="tel:1-XXX-XXX-XXXX">1-XXX-XXX-XXXX</a><br>
+                    Email: <a href="mailto:support@bankname.com">support@bankname.com</a><br>
+                    Hours: [Business Hours]
+                </p>
+                
+                <h3 style="margin-top: 1.5rem;">Fraud Hotline</h3>
+                <p>
+                    Phone: <a href="tel:1-XXX-XXX-XXXX">1-XXX-XXX-XXXX</a><br>
+                    Available 24/7
+                </p>
+                
+                <h3 style="margin-top: 1.5rem;">Legal Department</h3>
+                <p>Email: <a href="mailto:legal@bankname.com">legal@bankname.com</a></p>
+            </div>
+        </section>
+
+        <!-- Final Notice -->
+        <div class="notice-box" style="margin-top: 3rem;">
+            <p><strong>By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</strong></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 [Bank Name]. All rights reserved.</p>
+        <div class="footer-badges">
+            <span class="badge">Member FDIC</span>
+            <span class="badge">Equal Housing Lender</span>
+            <span class="badge">NMLS #XXXXXX</span>
+        </div>
+    </footer>
+
+    <script>
+        // Table of Contents Toggle
+
+        function toggleTOC() {
+            const tocContent = document.getElementById('tocContent');
+            const tocToggle = document.querySelector('.toc-toggle');
+            
+            tocContent.classList.toggle('active');
+            tocToggle.classList.toggle('active');
+        }
+
+        // Smooth scroll with offset for sticky header
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const offset = 120;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close TOC on mobile after clicking
+                    if (window.innerWidth < 768) {
+                        toggleTOC();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,6 +1,11 @@
-        .profile-card {
+       .profile-card h2,
+		.profile-card h3,
+		.profile-card h5 {
+    		color: #0C6;
+		}
+		.profile-card{
             margin: 20px auto;
-            max-width: 1000px;
+            max-width: 1400px;
             width: 100%;
             background: white;
             border-radius: 12px;
@@ -77,7 +82,10 @@
         }
 
         .profile-text-column {
-            padding: 40px;
+	padding-top: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+	padding-left: 40px;
         }
 
         .section {
@@ -170,7 +178,10 @@
             }
 
             .profile-text-column {
-                padding: 30px 20px;
+	padding-top: 5px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	padding-left: 20px;
             }
 
             .info-grid {
